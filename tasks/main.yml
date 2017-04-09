@@ -8,4 +8,4 @@
     regexp: ".*{{ item }}$"
     line: "{{ hostvars[item].ansible_default_ipv4.address }} {{ item }}"
   when: hostvars[item].ansible_default_ipv4.address is defined
-  with_items: "{{ groups[hostname_group] | default([]) }}"
+  with_items: "{{ groups[hostfile_group] | default([]) }}"
